@@ -17,3 +17,4 @@ Website yang menyediakan list rumah sakit terdekat dengan anda dan memberikan in
 *pihak rumah sakit memberikan keterangan jumlah ambulan yang tersedia
 *pihak rumah sakit dapat melihat laporan yang dikirimkan
 *rumah sakit dapat melihat lokasi kejadian dari link yang dikirimkan user
+*rumah sakit dapat merubah sandi akun 
