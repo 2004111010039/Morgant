@@ -1,4 +1,4 @@
-MORGANT
+-MORGANT-
 Website yang menyediakan list rumah sakit terdekat dengan anda dan memberikan informasi berapa jumlah ambulan yang sedang tersedia yang berfungsi untuk korban kecelakaan atau warga yang melihat kecelakaan dapat melaporkan dengan dibantu sistem pada saat melaporkan lansgung di sertakan dengan link dari si pelapor agar ambulan yang di kirim pihak rumah sakit tidak payah mencari lagi lokasi si korban jadi dapat langsung menuju titik lokasi yang dikirimkan.
 
 //user
