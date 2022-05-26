@@ -10006,7 +10006,12 @@ h3 {
 
 .atur input{
   width: 100%;
-  border: 1px solid gray;
+  border: 0px solid gray;
+  color: #6c757d;
+}
+.atur textarea{
+  width: 100%;
+  border: 0px solid gray;
   color: #6c757d;
 }
 
@@ -10037,3 +10042,26 @@ h3 {
   height: 20px;
 }
 
+.jarak{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.jarak textarea{
+  display: none;
+}
+
+.jarak button{
+  padding: 5px 30px;
+  border-radius: 5px;
+  width: 96%;
+  border: 0px solid;
+  color: gray;
+  font-size: 17px;
+  background-color: #fff;
+}
+
+.xyz{
+  border: 0px solid;
+  margin: 3px 0px 20px;
+}
