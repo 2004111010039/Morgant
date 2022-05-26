@@ -78,6 +78,16 @@ session_start();
 			                                <input type="text" class="form-control" name="jumlah_ambulan" value="<?= $data['jumlah_ambulan'] ?>" required="required"/>
 			                                <p class="help-block text-danger"></p>
 			                            </div>
+                                        <div class="control-group">
+                                            <label><b>Latitude</b></label>
+                                            <input type="text" class="form-control" name="latitude" value="<?= $data['lat'] ?>" required="required"/>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="control-group">
+                                            <label><b>Longtitude</b></label>
+                                            <input type="text" class="form-control" name="longtitude" value="<?= $data['lon'] ?>" required="required"/>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
 			                            <div>
 			                                <button class="btn btn-primary" type="submit" id="sendMessageButton">Update Data</button>
 			                            </div>
@@ -104,3 +114,4 @@ session_start();
         <script src="../js/main.js"></script>
     </body>
 </html>
+
