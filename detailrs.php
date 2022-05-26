@@ -2,6 +2,7 @@
 include "backend/connect.php";
 $id = $_GET['id'];
 session_start();
+unset($_SESSION['stopclick']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
