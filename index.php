@@ -66,8 +66,17 @@ session_start();
                     </div>
                 </div>
                 <div class="container bg-white pt-5">
+                <?php if(!isset($_SESSION['stopclick'])){?>
+                    <div class="jarak ">
+                        <form action="backend/setjarakrs.php" method="post">
+                            <textarea name="lat" id="lat"></textarea>
+                            <textarea name="lon" id="lon"></textarea>
+                            <button id="clickbutton">Mencari jarak lokasi terdekat, mohon menunggu . . .</button>
+                        </form>
+                    </div>
+                <?php } ?>
                         <?php 
-                        $query = mysqli_query($koneksi, "SELECT * FROM rumah_sakit");
+                        $query = mysqli_query($koneksi, "SELECT * FROM rumah_sakit ORDER BY jarak ASC");
                         while ($data = mysqli_fetch_array($query)){
 
                         ?>
@@ -80,9 +89,9 @@ session_start();
                             <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold"><?= $data['nama_rs'] ?></h3>
                             <p><?= $data['alamat'] ?><br>
                             <?php if($data['jumlah_ambulan'] >= 1) { ?>
-                                <i class="infoambulan1"><?= $data['jumlah_ambulan'] ?> ambulan Tersedia</i>
+                                <i class="infoambulan1"><?= $data['jumlah_ambulan'] ?> ambulan Tersedia / <?= $data['jarak'] ?> KM</i> 
                             <?php } else { ?>
-                                <i class="infoambulan0"><?= $data['jumlah_ambulan'] ?> ambulan Tersedia</i>
+                                <i class="infoambulan0"><?= $data['jumlah_ambulan'] ?> ambulan Tersedia / <?= $data['jarak'] ?> KM</i> 
                             <?php } ?>
                             </p>
                         </div>
@@ -95,6 +104,28 @@ session_start();
                 </div>
             </div>
         </div>
+        <script>
+            document.onload = getLocation();
+            var x = document.getElementById("lat");
+            var y = document.getElementById("lon");
+
+            window.onload = function(){
+                var button = document.getElementById('clickbutton').click();
+            }
+
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else { 
+                x.innerHTML = "Browser mu tidak support.";
+              }
+            }
+
+            function showPosition(position) {
+              x.innerHTML =position.coords.latitude;
+              y.innerHTML =position.coords.longitude;
+            }
+        </script>
         <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -103,5 +134,6 @@ session_start();
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
         <script src="js/main.js"></script>
+         <?php unset($_SESSION['stopclick']); ?>
     </body>
 </html>
