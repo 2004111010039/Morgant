@@ -29,7 +29,7 @@ if($_SESSION['status'] == 'login'){
                             <i><?= $pesan ?></i>
                         <?php } ?>
                     </div>
-                    <a class="btn btn-link p-0" href="registeru.php">Sign In</a> / <a class="btn btn-link p-0" href="../admin/logina.php">Login sebagai admin</a> / <a class="btn btn-link p-0" href="../index.php">Kembali</a>
+                    <a class="btn btn-link p-0" href="registeru.php">Sign Up</a> / <a class="btn btn-link p-0" href="../admin/logina.php">Login sebagai RS</a> / <a class="btn btn-link p-0" href="../index.php">Kembali</a>
                 </center>
 	  		</form>
 		</div>
