@@ -5,10 +5,11 @@ $nama_rumahsakit = $_POST['nama_rumahsakit'];
 $laporan = $_POST['laporan'];
 $nama_user = $_POST['nama_user'];
 $idrs = $_POST['idrs'];
+$link = $_POST['link'];
 
 
-$sql="INSERT into $nama_rumahsakit (id, nama_pelapor, laporan) values
-('', '$nama_user', '$laporan')";
+$sql="INSERT into $nama_rumahsakit (id, nama_pelapor, laporan, link) values
+('', '$nama_user', '$laporan', '$link')";
 
 
 if (mysqli_query($koneksi,$sql)) {
