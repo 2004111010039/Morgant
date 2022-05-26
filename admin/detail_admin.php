@@ -25,7 +25,9 @@ session_start();
                 <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
                 	<img class="sss" src="../img/rsimg/<?= $data['namaimg'] ?>" alt="Image"><br>
                     <h1 class="font-weight-bold"><?= $data['nama_rs']; ?></h1>
-                    <p class="mb-4">Selamat datang admin, anda dapat merubah data rumah sakit anda <a href="update_rs.php"><b>disini</b></a></p>
+                    <p class="mb-4">Selamat datang admin, anda dapat merubah data rumah sakit anda</p>
+                    <p><b><a href="upload_profile.php">Upload Profile</a></b></p>
+                    <p><b><a href="update_rs.php">Update Data RS</a></b></p>
                     <p><b><a href="rubah_sandi.php">Rubah Sandi</a></b></p>
                     <a href="../backend/logout.php" class="btn btn-lg btn-block btn-primary mt-auto">Logout</a>
                 </div> 
@@ -61,7 +63,7 @@ session_start();
                                         <td width="5%">No</td>
                                         <td width="20%">Nama Pelapor</td>
                                         <td width="60%">Laporan</td>
-                                        <td>action</td>
+                                        <td>Konfirmasi</td>
                                         </tr>
                                         <?php while($laporan = mysqli_fetch_array($querylaporan)){ ?>
                                         <form action="../backend/delete_laporan.php" method="POST">
@@ -71,8 +73,8 @@ session_start();
                                             <input type="hidden" name="idlap" value="<?= $laporan['id']; ?>">
                                             <td><?= $no++ ?></td>
                                             <td><?= $laporan['nama_pelapor'] ?></td>
-                                            <td class="csdeleft"><?= $laporan['laporan']  ?></td> 
-                                            <td><button class="btnss" onclick="return confirm('Ingin menghapus?')">
+                                            <td class="csdeleft"><?= $laporan['laporan']  ?> <a href="<?= $laporan['link'] ?>" target="blank"><?= $laporan['link']  ?></a></td> 
+                                            <td><button class="btnss" onclick="return confirm('Laporan sudah selesai?')">
                                             <svg style="width:24px;height:24px" viewBox="0 0 23 23">
                                             <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20M16.59 7.58L10 14.17L7.41 11.59L6 13L10 17L18 9L16.59 7.58Z" />
                                             </svg></button>
