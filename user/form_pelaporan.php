@@ -58,35 +58,6 @@ session_start(); ?>
             <div class="container bg-white pt-5">
                     <div class="col-md-12 pb-5">
                     <div class="contact-form">
-                        <div id="success"></div>
-                        <div class="container my-5">
-                          <div class="row">
-                            <div class="col-6">
-                              <p>Klik Button untuk mengetahui koordinat dan copykan ke form laporan dibawah.</p>
-
-                              <button class="btn btn-primary btn-block" onclick="getLocation()">Generate Lokasi</button>
-                            </div>
-                            <div class="col-6">
-                              <p id="demo"></p>
-                            </div>
-                          </div>
-                        </div>
-                        <script>
-                        var x = document.getElementById("demo");
-
-                        function getLocation() {
-                          if (navigator.geolocation) {
-                            navigator.geolocation.getCurrentPosition(showPosition);
-                          } else { 
-                            x.innerHTML = "Browser mu tidak support.";
-                          }
-                        }
-
-                        function showPosition(position) {
-                          x.innerHTML = "Latitude: " + position.coords.latitude + 
-                          "<br>Longitude: " + position.coords.longitude;
-                        }
-                        </script>
                         <form name="sentMessage" id="contactForm" novalidate="novalidate" method="post" action="../backend/input_laporan.php">
                             <div class="atur">
                                 <?php $nm_rumahsakit = str_replace(' ', '', $nama_rumahsakit);
@@ -94,7 +65,8 @@ session_start(); ?>
                                 <input type="hidden" name="idrs" value="<?= $idrs ?>">
                                 <input type="hidden" name="nama_rumahsakit" value="<?= $nm_rs_kecil ?>">
                                 <input type="hidden" name="nama_user" value="<?= $nama_user ?>">
-                                <input type="text" name="laporan" value="Telah terjadi kecelakaan di titik (lan ..., long ...), mohon segera kirimkan ambulan">
+                                <input type="text" name="laporan" value="Telah terjadi kecelakaan di lokasi">
+                                <textarea id="demo" name="link"></textarea>
                                 <p>Note: Mohon izinkan/allow lokasi agar kami dapat menemukan lokasi</p>
                             </div>
                             <div>
@@ -104,6 +76,23 @@ session_start(); ?>
                     </div>
                 </div>
             </div>
+               <script>
+                    document.onload = getLocation();
+                    var x = document.getElementById("demo");
+
+                    function getLocation() {
+                      if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                      } else { 
+                        x.innerHTML = "Browser mu tidak support.";
+                      }
+                    }
+
+                    function showPosition(position) {
+                      x.innerHTML = "http://www.google.com/maps/place/" + position.coords.latitude + 
+                      "," + position.coords.longitude;
+                    }
+                </script>
            <div class="container py-4 bg-secondary text-center">
                     <p class="m-0 text-white">
                         &copy; Project Rekayasa Perangkat Lunak 2022 
