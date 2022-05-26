@@ -17,12 +17,12 @@ if($_SESSION['status'] == 'login'){
     <body>
         <div class="login">
   			<div class="login-triangle"></div>
- 		 	<h2 class="login-header">Sign In</h2>
+ 		 	<h2 class="login-header">Sign Up</h2>
 	  		<form class="login-container" action="../backend/action_registeru.php" method="POST">
                 <p><input type="text" name="username" placeholder="Username" required></p>
 	    		<p><input type="password" placeholder="Password" name="password" required></p>
                 <p><input type="password" placeholder="Konfirmasi Password" name="password2" required></p>
-	    		<p><input type="submit" value="Sign In"></p>
+	    		<p><input type="submit" value="Sign Up"></p>
                 <center>
                 <div class="gagal-signin">
                     <?php if(isset($_GET['pesan'])){ 
@@ -31,7 +31,7 @@ if($_SESSION['status'] == 'login'){
                     <?php } ?>
                 </div>
                 </center>
-	    		<center><a class="btn btn-link p-0" href="login.php">Login</a> / <a class="btn btn-link p-0" href="../admin/registera.php">Sign in sebagai Admin</a> / <a class="btn btn-link p-0" href="../index.php">Kembali</a></center>
+	    		<center><a class="btn btn-link p-0" href="login.php">Login</a> / <a class="btn btn-link p-0" href="../admin/registera.php">Sign Up sebagai RS</a> / <a class="btn btn-link p-0" href="../index.php">Kembali</a></center>
 	  		</form>
 		</div>
     </body>
