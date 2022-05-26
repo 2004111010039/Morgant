@@ -1,5 +1,5 @@
 <?php 
-session_start();
+session_start(); 
 include "connect.php";
 
 $nama_rs = $_POST['nama_rs'];
