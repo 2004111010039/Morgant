@@ -1,4 +1,4 @@
-s<?php include "../backend/connect.php"; 
+<?php include "../backend/connect.php"; 
 session_start();
 if(isset($_SESSION['status'])){ 
 if($_SESSION['status'] == 'login'){ 
@@ -17,7 +17,7 @@ if($_SESSION['status'] == 'login'){
     <body>
         <div class="login">
   			<div class="login-triangle"></div>
- 		 	<h2 class="login-header">Sign In</h2>
+ 		 	<h2 class="login-header">Sign Up Rumah Sakit</h2>
 	  		<form class="login-container" action="../backend/action_registera.php" method="POST">
                 <p><input type="text" name="nama-rs" placeholder="Nama Rumah Sakit" required></p>
 	    		<p><input type="password" placeholder="Password" name="password" required></p>
@@ -27,7 +27,9 @@ if($_SESSION['status'] == 'login'){
                 <p><input type="text" name="alamat" placeholder="Alamat Rumah Sakit" required></p>
                 <p><input type="text" name="link-gmaps" placeholder="Gmaps Rumah Sakit" required></p>
                 <p><input type="number" name="jumlah-ambulan" placeholder="Jumlah Ambulan" required></p>
-	    		<p><input type="submit" value="Sign In"></p>
+                <p><input type="text" name="lat" placeholder="Latitude" required></p>
+                <p><input type="text" name="long" placeholder="Longtitude" required></p>
+	    		<p><input type="submit" value="Sign Up"></p>
                 <center>
                 <div class="gagal-signin">
                     <?php if(isset($_GET['pesan'])){ 
@@ -36,7 +38,7 @@ if($_SESSION['status'] == 'login'){
                     <?php } ?>
                 </div>
                 </center>
-	    		<center><a class="btn btn-link p-0" href="../user/login.php">Login</a> / <a class="btn btn-link p-0" href="../user/registeru.php">Sign in sebagai user</a> / <a class="btn btn-link p-0" href="../index.php">Kembali</a></center>
+	    		<center><a class="btn btn-link p-0" href="../user/login.php">Login</a> / <a class="btn btn-link p-0" href="../user/registeru.php">Sign Up sebagai user</a> / <a class="btn btn-link p-0" href="../index.php">Kembali</a></center>
 	  		</form>
 		</div>
     </body>
