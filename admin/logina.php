@@ -17,11 +17,11 @@ if($_SESSION['status'] == 'login'){
     <body>
         <div class="login">
   			<div class="login-triangle"></div>
- 		 	<h2 class="login-header">Log in Admin</h2>
+ 		 	<h2 class="login-header">Log in Rumah Sakit</h2>
 	  		<form action="../backend/action_login_adm.php" method="POST" class="login-container">
 	    		<p><input type="text" placeholder="Nama Rumah Sakit" name="nama_rs" required></p>
 	    		<p><input type="password" placeholder="Password" name="password" required></p>
-	    		<p><input type="submit" name="submit" value="Log in Admin"></p>
+	    		<p><input type="submit" name="submit" value="Log in"></p>
 	    		<center>
                     <div class="gagal-login">
                         <?php if(isset($_GET['pesan'])){ 
@@ -29,7 +29,7 @@ if($_SESSION['status'] == 'login'){
                             <i><?= $pesan ?></i>
                         <?php } ?>
                     </div>
-                    <a class="btn btn-link p-0" href="../user/registeru.php">Sign In</a> / <a class="btn btn-link p-0" href="../user/login.php">Login sebagai user</a> / <a class="btn btn-link p-0" href="../index.php">Kembali</a>
+                    <a class="btn btn-link p-0" href="../user/registeru.php">Sign Up</a> / <a class="btn btn-link p-0" href="../user/login.php">Login sebagai user</a> / <a class="btn btn-link p-0" href="../index.php">Kembali</a>
                 </center>
 	  		</form>
 		</div>
